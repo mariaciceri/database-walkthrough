@@ -11,4 +11,25 @@
     </div>
 </div>
 
+{% for category in categories %}
+{% if category.tasks %}
+<h5 class="light-blue-text text-darken-4">{{ category.category_name }}</h5>
+<ul class="collapsible">
+    {% for task in tasks if task.category_id == category.id %}
+    <li>
+        <div class="collapsible-header"><i class="fas fa-caret-down"></i><strong>{{ task.task_name }}</strong> : {{
+            task.due_date }}
+            {% if task.is_urgent == True %}
+            <i class="fas fa-exclamation-circle"></i>
+            {% endif %}
+        </div>
+        <div class="collapsible-body">
+            <span>{{ task.task_description }}</span>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endfor %}
+
 {% endblock %}
