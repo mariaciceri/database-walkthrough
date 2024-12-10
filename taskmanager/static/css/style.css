@@ -7,3 +7,21 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+.custom-footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+}
+
+.card
+  .card-action
+  a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(
+    .btn-floating
+  ) {
+  color: darkgreen;
+  margin-right: 24px;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
